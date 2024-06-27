@@ -11,7 +11,7 @@ except ImportError:
     from django.urls import reverse, resolve
 
 try:
-    from django.utils.six import string_types
+    from six import string_types
 except ImportError:
     # For Django < 1.4.2
     string_types = basestring,
