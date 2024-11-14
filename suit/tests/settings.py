@@ -29,9 +29,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 ]
 
-MIDDLEWARE += [
-    'django.middleware.security.SecurityMiddleware',
-]
+if django.VERSION < (1, 10):
+    MIDDLEWARE_CLASSES = MIDDLEWARE + [
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+    ]
+else:
+    MIDDLEWARE += [
+        'django.middleware.security.SecurityMiddleware',
+    ]
 
 ROOT_URLCONF = 'suit.tests.urls'
 
