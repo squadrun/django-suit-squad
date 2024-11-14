@@ -18,7 +18,6 @@ DATABASES = {
 TIME_ZONE = 'Europe/Riga'
 SITE_ID = 1
 USE_I18N = True
-USE_L10N = True
 MEDIA_ROOT = ''
 MEDIA_URL = ''
 SECRET_KEY = 'vaO4Y<g#YRWG8;Md8noiLp>.w(w~q_b=|1`?9<x>0KxA%UB!63'
@@ -30,14 +29,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 ]
 
-if django.VERSION < (1, 10):
-    MIDDLEWARE_CLASSES = MIDDLEWARE + [
-        'django.contrib.auth.middleware.AuthenticationMiddleware',
-    ]
-else:
-    MIDDLEWARE += [
-        'django.middleware.security.SecurityMiddleware',
-    ]
+MIDDLEWARE += [
+    'django.middleware.security.SecurityMiddleware',
+]
 
 ROOT_URLCONF = 'suit.tests.urls'
 

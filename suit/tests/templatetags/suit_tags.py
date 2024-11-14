@@ -27,13 +27,13 @@ class City(models.Model):
         return self.name
 
 
+@admin.register(City)
 class CityAdmin(admin.ModelAdmin):
     readonly_fields = ('country',)
     pass
 
 
 admin.site.register(Country)
-admin.site.register(City, CityAdmin)
 
 
 class SuitTagsTestCase(TestCase):
