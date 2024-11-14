@@ -4,7 +4,7 @@ from suit.tests.mixins import ModelsTestCaseMixin, UserTestCaseMixin
 from suit.tests.models import Book, BookAdmin, test_app_label
 
 try:
-    from django.urls import reverse
+    from django.core.urlresolvers import reverse
 except ImportError:
     # For Django >= 2.0
     from django.urls import reverse

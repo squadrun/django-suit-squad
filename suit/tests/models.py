@@ -30,7 +30,6 @@ class Album(models.Model):
         return self.name
 
 
-@admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_filter = ('id', 'name',)
     list_display = ('id', 'name',)
@@ -45,7 +44,6 @@ class BookAdmin(admin.ModelAdmin):
                 'data': obj.pk}
 
 
-@admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
     def suit_row_attributes(self, obj):
         """No request defined to test backward-compatibility"""
@@ -61,3 +59,5 @@ class User(models.Model):
 
 
 admin.site.register(User)
+admin.site.register(Book, BookAdmin)
+admin.site.register(Album, AlbumAdmin)

@@ -14,7 +14,7 @@ except AttributeError:
     pass
 
 try:
-    from django.urls import reverse
+    from django.core.urlresolvers import reverse
 except ImportError:
     # For Django >= 2.0
     from django.urls import reverse
