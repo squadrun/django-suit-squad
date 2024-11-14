@@ -5,7 +5,7 @@ from suit.tests.mixins import ModelsTestCaseMixin, UserTestCaseMixin
 from suit.tests.models import test_app_label
 
 try:
-    from django.core.urlresolvers import reverse
+    from django.urls import reverse
 except ImportError:
     # For Django >= 2.0
     from django.urls import reverse
@@ -15,7 +15,7 @@ except ImportError:
 try:
     from django.utils.encoding import force_unicode
 except ImportError:
-    from django.utils.encoding import force_text as force_unicode
+    from django.utils.encoding import force_str as force_unicode
 
 app_label = test_app_label()
 

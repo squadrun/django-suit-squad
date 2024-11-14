@@ -1,11 +1,11 @@
 import django
-from django.conf.urls import include, url
 from django.contrib import admin
 
 admin.autodiscover()
 
 try:
     # Django 2.0+
+    from django.urls import include, path
     from django.urls import re_path
 
     urlpatterns = [
@@ -17,9 +17,9 @@ except ImportError:
         urlpatterns = patterns(
             '',
             # Examples for custom menu
-            url(r'^admin/', include(admin.site.urls)),
+            path('admin/', include(admin.site.urls)),
         )
     except ImportError:  # Django 1.10+
         urlpatterns = [
-            url(r'^admin/', include(admin.site.urls)),
+            path('admin/', include(admin.site.urls)),
         ]
