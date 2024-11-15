@@ -58,6 +58,6 @@ class User(models.Model):
     name = models.CharField(max_length=64)
 
 
+admin.site.register(User)
 admin.site.register(Book, BookAdmin)
 admin.site.register(Album, AlbumAdmin)
-admin.site.register(User)
